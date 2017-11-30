@@ -39,6 +39,20 @@ docker run -it cgonul/debian:1.0.0
 >>git version
 ```
 
+While building with docker you may be aware of its caching mechanisms. When you RUN two commands like this
+```
+docker run -it debian:buster (Run it and interact with it)
+RUN apt-get update
+RUN apt-get install git
+```
+the first instruction may not be executed when it is cached. So you may have not up to date images. For preventing this concatenate the instructions into one.
+
+You can also specify not to cache.
+```
+docker build -t cgonul/debian:1.0.0 . --no-cache=true
+```
+
+
 
 
 # Some useful links
