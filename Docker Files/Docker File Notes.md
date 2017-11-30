@@ -29,5 +29,13 @@ You can override this when running the docker image.
 ```
 docker run -it cgonul/debian:1.0.0 bash
 ```
+With COPY instruction you can copy files from host machine into image.
+```
+COPY abc.txt /src/abc.txt
+```
+ADD instruction can not only copy files but also allow you to download a file from internet and copy to the container.
+ADD also has the ability to automatically unpack compressed files.
+
+
 
 
