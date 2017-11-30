@@ -27,7 +27,7 @@ For checking the history of an image
 docker history <image_name:image_version>
 ```
 
-For creating an image form debian and git commands.
+For creating an image from debian and add a git install.
 ```
 docker run -it debian:buster (Run it and interact with it)
 >> apt-get update && apt-get install -y git
@@ -45,7 +45,7 @@ docker run -it debian:buster (Run it and interact with it)
 RUN apt-get update
 RUN apt-get install git
 ```
-the first instruction may not be executed when it is cached. So you may have not up to date images. For preventing this concatenate the instructions into one.
+the first instruction may not be executed when it is cached. So you may have outdated images. For preventing this concatenate the instructions into one.
 
 You can also specify not to cache.
 ```
