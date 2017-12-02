@@ -1,0 +1,1 @@
+A text file to be copied into the image.
