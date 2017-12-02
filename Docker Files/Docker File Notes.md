@@ -36,6 +36,11 @@ COPY abc.txt /src/abc.txt
 ADD instruction can not only copy files but also allow you to download a file from internet and copy to the container.
 ADD also has the ability to automatically unpack compressed files.
 
+It is a good practice to run dockerize application with unprivileged users. 
+```
+RUN useradd -ms /bin/bash admin
+USER admin
+```
 
 
 
