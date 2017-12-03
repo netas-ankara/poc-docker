@@ -6,8 +6,9 @@ First run the redis image
 docker run -d --name redis redis:3.2.0
 ```
 
-After running redis client run the python app linking it to the redis client.
+After running redis, run the python app linking it to the redis client.
 ```
+docker build -t dockerapp:v0.3 .
 docker run -d -p 5000:5000 --link redis dockerapp:v0.3
 ```
 
