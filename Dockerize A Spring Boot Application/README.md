@@ -13,3 +13,7 @@ Then run the image as a container with :
 ```
 docker run -p 8080:8080 -d springio/gs-spring-boot-docker:latest
 ```
+With the spotify docker file plugin you can execute the following mvn goal
+```
+clean install dockerfile:push
+```

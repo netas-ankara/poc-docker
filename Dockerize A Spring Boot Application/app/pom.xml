@@ -30,6 +30,13 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <repository>
+            <id>internal-repository</id>
+            <name>Netas Main Repo</name>
+            <url>http://nexus.tge.netas.com.tr/nexus/content/repositories/netas-main-repo/</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <plugins>
@@ -41,8 +48,17 @@
                 <groupId>com.spotify</groupId>
                 <artifactId>dockerfile-maven-plugin</artifactId>
                 <version>1.3.6</version>
+                <executions>
+                    <execution>
+                        <id>default</id>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <repository>${docker.image.prefix}/${project.artifactId}</repository>
+                    <repository>localhost:5000/${project.artifactId}</repository>
                     <tag>${project.version}</tag>
                     <buildArgs>
                         <JAR_FILE>target/${project.build.finalName}.jar</JAR_FILE>
