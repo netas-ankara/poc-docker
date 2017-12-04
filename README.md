@@ -51,14 +51,15 @@ You can also specify not to cache.
 ```
 docker build -t cgonul/debian:1.0.0 . --no-cache=true
 ```
-To remove all of the images you can :
+Delete every Docker containers:
 ```
-docker rmi -f $(docker images -a -q)
+docker rm -f $(docker ps -a -q)
 ```
-To clean up all of the previous work you can:
+To delete every Docker image you can :
 ```
-docker rm $(docker ps -a -q)
+docker rmi -f $(docker images -q)
 ```
+
 Tag the image like this and then you can push it to your own docker hub:
 ```
 docker tag <image_id> cgonul/debian:1.0.0
