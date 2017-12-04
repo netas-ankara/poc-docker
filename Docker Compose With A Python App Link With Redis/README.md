@@ -22,6 +22,8 @@ services:
     image: redis:3.2.0
 ```
 
+**When running with the above docker file you do not need to specify a link information. The depends on clause can make it for you.**
+
 You can run the following command execute the docker compose file.
 ```
 docker-compose up
