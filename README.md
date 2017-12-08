@@ -59,6 +59,15 @@ To delete every Docker image you can :
 ```
 docker rmi -f $(docker images -q)
 ```
+Remove dangling images
+```
+docker rmi $(docker images -f dangling=true -q)
+```
+
+To run an image with a volume attached to it you can :
+```
+docker run --rm -v /host_fs/data alpine ls /data 
+```
 
 Tag the image like this and then you can push it to your own docker hub:
 ```
