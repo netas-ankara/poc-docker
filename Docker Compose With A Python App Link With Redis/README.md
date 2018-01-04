@@ -57,6 +57,7 @@ docker-compose rm --all
 It is very important to remember that docker only rebuilds the image when the image does not exists. So any change in dockerfile will not be executed if the image exists. To force this you can build it with :
 ```
 docker-compose build
+docker-compose up --build
 ```
 
 ```
